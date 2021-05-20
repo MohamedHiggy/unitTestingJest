@@ -1,0 +1,15 @@
+{
+    "name": "testingjest",
+    "version": "1.0.0",
+    "description": "start testing with jest",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "all-tests": "jest --watchAll"
+    },
+    "author": "mohamedHiggy",
+    "license": "ISC",
+    "devDependencies": {
+        "jest": "^26.6.3"
+    }
+}
