@@ -1,13 +1,10 @@
 const testFun = require("../testFun");
 
-test("return 0", () => {
+
+test("return num", () => {
     expect(testFun()).toBe(0);
 });
 
 test("return num", () => {
-    expect(testFun(3)).toBe(3);
-});
-
-test("return two num", () => {
-    expect(testFun(5, 3)).toBe(8);
+    expect(testFun(5 + 5 + 5 + 5)).toBe(20);
 });

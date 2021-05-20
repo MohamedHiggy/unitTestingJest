@@ -1,4 +1,5 @@
-function testFun(num1, num2) {
-    return (num1 || 0) + (num2 || null)
+function testFun(...args) {
+    return args.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
 }
+
 module.exports = testFun;
