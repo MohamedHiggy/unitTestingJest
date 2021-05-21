@@ -1,10 +1,14 @@
 const testFun = require("../testFun");
 
+describe("check the test", () => {
 
-test("return num", () => {
-    expect(testFun()).toBe(0);
-});
+    describe("check 0", () => {
+        test("return num", () => {
+            expect(testFun()).toBe(0);
+        });
+    })
 
-test("return num", () => {
-    expect(testFun(5 + 5 + 5 + 5)).toBe(20);
+    test("return num", () => {
+        expect(testFun(5 + 5 + 5 + 5)).toBe(20);
+    });
 });
