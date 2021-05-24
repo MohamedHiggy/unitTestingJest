@@ -67,7 +67,7 @@ test("check if first number equal target", () => {
 });
 
 
-//create  second own matcher 
+//create second own matcher 
 expect.extend({
     toBeBetween(received, start, end) {
         const pass = received > start && received < end
