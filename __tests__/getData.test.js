@@ -38,3 +38,55 @@ test("check first elemnt reaterThanOrEqual 1", () => {
 test("check first elemnt LessThanOrEqual 101", () => {
     expect(getData[0]).toBeLessThanOrEqual(10);
 });
+
+
+
+
+//create first own matcher 
+expect.extend({
+    checkForNumber(received, target) {
+        const pass = received == target
+        if (pass) {
+            return {
+                message: () => `Expected ${received} equal ${target}`,
+                pass: true
+            }
+        } else {
+
+            return {
+                message: () => `Expected ${received} not equal ${target}`,
+                pass: false
+            }
+        }
+    }
+});
+
+//checkForNumber() check if first number equal target
+test("check if first number equal target", () => {
+    expect(6).checkForNumber(6);
+});
+
+
+//create  second own matcher 
+expect.extend({
+    toBeBetween(received, start, end) {
+        const pass = received > start && received < end
+        if (pass) {
+            return {
+                message: () => `Expected ${received} more than ${start} and less ${end}`,
+                pass: true
+            }
+        } else {
+
+            return {
+                message: () => `Expected ${received} not more than ${start} and less ${end}`,
+                pass: false
+            }
+        }
+    }
+});
+
+//toBeBetween() check if number more than start and less than end 
+test("check if number more than start and less than end ", () => {
+    expect(6).toBeBetween(4, 8);
+});
